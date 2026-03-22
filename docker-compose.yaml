@@ -1,0 +1,22 @@
+# Local development: run Fabro backend + Next.js
+# Usage:
+#   docker compose up -d fabro
+#   # Set FABRO_API_URL=http://localhost:3001 in .env.local
+#   npm run dev
+
+services:
+  fabro:
+    build:
+      context: ./fabro-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    # Fabro needs a writable data dir for SQLite; use a volume
+    volumes:
+      - fabro-data:/var/fabro
+    # For real workflows you'd mount secrets; for dev, optional
+    # environment:
+    #   ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+
+volumes:
+  fabro-data:

@@ -1,0 +1,54 @@
+# Firebase App Hosting configuration for fabro-cloud
+# https://firebase.google.com/docs/app-hosting/configure
+
+# Environment variables for Firebase client SDK (Next.js needs NEXT_PUBLIC_ for browser access)
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyCYgSGdl6_FCcOwXfZrTnITNvn1zSpKhPU
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: fabro-cloud.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: fabro-cloud
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: fabro-cloud.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "867058940106"
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:867058940106:web:35df8e91fb00ae5182dc33
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: G-6P1BHD13EY
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: FABRO_API_URL
+    secret: FABRO_API_URL
+    availability:
+      - RUNTIME
+  # Fabro backend: set FABRO_API_URL in Firebase Console to your Cloud Run URL
+  # Demo mode: set NEXT_PUBLIC_FABRO_DEMO=1 to explore UI with static mock data
+
+# Cloud Run service settings (optional - defaults work for most apps)
+# runConfig:
+#   minInstances: 0
+#   maxInstances: 100
+#   concurrency: 80
+#   cpu: 1
+#   memoryMiB: 512

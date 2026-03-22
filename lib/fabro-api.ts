@@ -5,16 +5,8 @@
 
 const API_BASE = "/api/fabro";
 
-const DEMO_MODE = process.env.NEXT_PUBLIC_FABRO_DEMO === "1";
-
 function headers(): HeadersInit {
-  const h: HeadersInit = {
-    "Content-Type": "application/json",
-  };
-  if (DEMO_MODE) {
-    (h as Record<string, string>)["X-Fabro-Demo"] = "1";
-  }
-  return h;
+  return { "Content-Type": "application/json" };
 }
 
 export type RunStatus =

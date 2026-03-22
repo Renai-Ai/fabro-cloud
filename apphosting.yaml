@@ -42,8 +42,7 @@ env:
     secret: FABRO_API_URL
     availability:
       - RUNTIME
-  # Fabro backend: set FABRO_API_URL in Firebase Console to your Cloud Run URL
-  # Demo mode: set NEXT_PUBLIC_FABRO_DEMO=1 to explore UI with static mock data
+  # For agent nodes: set ANTHROPIC_API_KEY in Firebase Console
 
 # Cloud Run service settings (optional - defaults work for most apps)
 # runConfig:
